@@ -23,7 +23,6 @@ pub struct UnionFind{
 impl UnionFind {
     /// Create a brand new UnionFind data structure where
     /// every item is in its own, discrete set by default.
-    #[allow(dead_code)]
     pub fn new(n: usize) -> UnionFind {
         let mut ids = Vec::with_capacity(n);
         for i in 0..n {
@@ -34,13 +33,11 @@ impl UnionFind {
     }
 
     /// Determine whether two nodes, p and q, are connected.
-    #[allow(dead_code)]
     pub fn cnx(&mut self, p: usize, q: usize) -> bool {
         return self.find(p) == self.find(q);
     }
 
     /// Find the set ID of a node (the root of the tree).
-    #[allow(dead_code)]
     pub fn find(&mut self, p: usize) -> usize {
         let mut i = p;
         while self.id[i] != i {
@@ -51,7 +48,6 @@ impl UnionFind {
     }
 
     /// Set the two nodes to be in the same set.
-    #[allow(dead_code)]
     pub fn union(&mut self, p: usize, q: usize) {
         let i = self.find(p);
         let j = self.find(q);
